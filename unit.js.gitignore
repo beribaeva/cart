@@ -1,0 +1,58 @@
+
+
+let cart = {
+    'Кузов':0,
+    'Двери':0,
+    'Замок':0,
+    'Ручки':0,
+    'Двигатель':0,    
+    'Поршни':0,
+    'Кольца':0,
+    
+
+
+};
+
+
+
+document.onclick=event =>{
+
+    if(event.target.classList.contains("plus")){
+        plusF(event.target.dataset.id);
+
+       // plusFunction(event.id) 
+    }
+    if(event.target.classList.contains("minus")){
+        minusF(event.target.dataset.id);
+
+       // minusFunction(event.id) 
+    }
+
+    if(event.target.classList.contains("render")){
+    minusF(event.target.dataset.id);
+
+   // minusFunction(event.id) 
+    }
+}
+
+
+    const plusF=id=> {
+        cart[id]=cart[id]+1;
+        renderCart();
+    }
+    
+    const minusF=id=> {
+        cart[id]=cart[id]-1;
+        renderCart();
+    }
+    const renderCart=()=>{
+        console.log(cart);
+    }    
+    renderCart();
+
+    function result(){
+        r= document.getElementById(cart).value;
+        document.getElementById('out').innerHTML=r;        
+    }
+    
+
